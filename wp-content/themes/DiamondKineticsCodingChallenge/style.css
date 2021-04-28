@@ -1,0 +1,87 @@
+/*
+ * Theme Name: Baseball Cards Flip
+ * Description: Starter Theme to use with Timber
+ * Author: Srijan Srivastava
+*/
+body {
+    margin: 2%;
+    padding: 0;
+    background-color: purple;
+}
+
+
+.site-title {
+    font-size: 50px;
+    font-weight: 900;
+    line-height: 35px;
+}
+
+.entry-header {
+    font-size: 20px;
+    font-weight: 900;
+    line-height: 35px;
+}
+
+.footer-info {
+    font-size: 20px;
+    line-height: 35px;
+}
+
+a.skip-link.screen-reader-text,
+a.hdr-logo-link {
+  color: white;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(1%, 1fr));
+    grid-template-rows: repeat(2, minmax(1%, 1fr));
+    grid-gap: 4%;
+    row-gap: 10%;
+    padding: 50px;
+}
+
+.card-container {
+    width: 100%;
+    padding-bottom: 140%;
+    perspective: 600px;
+    border-radius: 0.5rem;
+}
+.card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+.card-container:hover .card {
+    transform: rotateY(180deg);
+}
+.card-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+
+}
+.card-front img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+}
+.card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: White;
+    border-radius: 0.5rem;
+    transform: rotateY(180deg);
+}
+.card-back p {
+    text-align: center;
+    margin: 1vw;
+    line-height: 1.5vw;
+    font-size: 1vw;
+}

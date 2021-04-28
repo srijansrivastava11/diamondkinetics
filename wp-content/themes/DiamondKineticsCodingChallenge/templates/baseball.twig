@@ -1,0 +1,28 @@
+{% include 'html-header.twig' %}
+{% include 'base.twig' %}
+<div class="entry-content">
+  <div class='grid-container'>
+
+    {% for card in card_posts %}
+      <div class='card-container'>
+        <div class='card'>
+          <div class='card-front'>
+            <img src={{card.fields.image.url}} alt={{card.fields.image.alt}}>
+          </div>
+          <div class='card-back'>
+            <p>
+            {{card.fields.firstName~' '~card.fields.lastName}} <br>
+            Position: {{card.fields.position}} <br><br>
+            {{card.fields.introduction}} <br><br>
+            Average Max Barrel Speed: {{card.fields.max_average_barrel_speed}} mph<br>
+            Average Max Hand Speed: {{card.fields.average_max_hand_speed}} mph<br>
+            Average Attack Angle: {{card.fields.average_attack_angle}} degrees
+            </p>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    </div>
+</div>
+{% include 'footer.twig' %}
